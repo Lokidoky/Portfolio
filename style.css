@@ -1,40 +1,112 @@
 /* Reset some default styles */
-body, h1, h2, p {
+body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
 }
 
-/* Style the header and navigation */
-header {
-    background-color: #333;
-    color: #fff;
+/* Style the header */
+.site-header {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e0e0e0;
     padding: 10px 0;
-    text-align: center;
 }
 
-nav ul {
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-header .logo h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.site-header .menu ul {
     list-style-type: none;
 }
 
-nav ul li {
+.site-header .menu ul li {
     display: inline;
     margin-right: 20px;
 }
 
-nav a {
+.site-header .menu ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #333;
+    font-weight: bold;
 }
 
-/* Style the sections */
-section {
-    padding: 40px;
+/* Style the hero section */
+.hero {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Style the main content */
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+    margin-right: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style the side bar */
+.side-bar {
+    width: 300px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.widget h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.widget ul {
+    list-style-type: none;
+}
+
+.widget ul li {
+    margin-bottom: 10px;
 }
 
 /* Style the footer */
-footer {
-    background-color: #333;
-    color: #fff;
+.site-footer {
+    background-color: #f8f8f8;
+    border-top: 1px solid #e0e0e0;
+    padding: 20px 0;
     text-align: center;
-    padding: 10px 0;
+}
+
+.site-footer p {
+    font-size: 14px;
+    color: #666;
 }
