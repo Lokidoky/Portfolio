@@ -37,22 +37,41 @@ body, h1, h2, h3, p, ul, li {
     font-weight: bold;
 }
 
-/* Style the hero section */
+/* Style the existing hero section */
 .hero {
-    background-color: #333;
+    position: relative;
+    text-align: center;
     color: #fff;
-    padding: 50px 0;
+    background-image: url('Files/hero-background.jpg'); /* Your existing hero background image */
+    background-size: cover;
+    background-position: center center;
+    padding: 100px 0;
 }
 
-.hero h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
+/* Style the existing hero section */
+.hero {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background-image: url("C:\Users\timon\Desktop\Studium\5. Semester\EWEB\Portfolio\Files\Screenshot 2023-09-29 144010.jpg"); /* Your existing hero background image */
+    background-size: cover;
+    background-position: center center;
+    padding: 100px 0;
 }
 
-/* Style the main content */
-.container {
-    display: flex;
-    justify-content: space-between;
+/* Add background video styles */
+.hero video {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Place the video behind other content */
+}
+
+.hero-content {
+    padding: 100px 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background overlay */
 }
 
 main {
