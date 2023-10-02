@@ -150,7 +150,33 @@ main h2 {
     z-index: -1; /* Place the video behind other content */
 }
 
+
 /* Adjust padding for the container to control the parallax effect */
 #parallax .container {
     padding: 300px 25; /* Adjust this value for the desired effect */
 }
+
+/* Add a class for horizontal icons list */
+.horizontal-icons {
+    list-style: none;
+    padding: 0;
+}
+
+.horizontal-icons li {
+    display: inline-block; /* Display list items horizontally */
+    margin-right: 15px; /* Add some spacing between icons */
+}
+
+/* Increase the font size of social media icons */
+.horizontal-icons li .icon {
+    font-size: 35px; /* Default font size */
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* Add a hover effect to flip the icons */
+.horizontal-icons li .icon:hover {
+    transform: rotateY(360deg); /* Flip the icon horizontally on hover */
+}
+
+
+
