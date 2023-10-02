@@ -48,16 +48,6 @@ body, h1, h2, h3, p, ul, li {
     padding: 100px 0;
 }
 
-/* Style the existing hero section */
-.hero {
-    position: relative;
-    text-align: center;
-    color: #fff;
-    background-size: cover;
-    background-position: center center;
-    padding: 100px 0;
-}
-
 /* Add background video styles */
 .hero video {
     width: 100%;
@@ -150,32 +140,76 @@ main h2 {
     z-index: -1; /* Place the video behind other content */
 }
 
-
-/* Adjust padding for the container to control the parallax effect */
-#parallax .container {
-    padding: 300px 25; /* Adjust this value for the desired effect */
-}
-
 /* Add a class for horizontal icons list */
 .horizontal-icons {
     list-style: none;
     padding: 0;
+    display: inline; /* Display icons horizontally */
 }
 
 .horizontal-icons li {
     display: inline-block; /* Display list items horizontally */
-    margin-right: 15px; /* Add some spacing between icons */
+    margin-right: 17px; /* Add some spacing between icons */
 }
 
-/* Increase the font size of social media icons */
+/* Increase the font size of social media icons and change icon color */
 .horizontal-icons li .icon {
     font-size: 35px; /* Default font size */
+    color: #666; /* Change icon color to gray */
     transition: transform 0.3s ease; /* Add a smooth transition effect */
 }
 
-/* Add a hover effect to flip the icons */
+/* Add hover effect to grow and change the color of the icons */
 .horizontal-icons li .icon:hover {
-    transform: rotateY(360deg); /* Flip the icon horizontally on hover */
+    font-size: 3rem; /* Increase the size on hover (adjust as needed) */
+    transition: font-size 0.5s ease;
+    color: #333; /* Change icon color on hover to a darker gray */
+}
+
+/* Style the testimonials section */
+#testimonials {
+    text-align: center;
+    padding: 80px 0;
+}
+
+/* Style the testimonial slider container */
+.testimonial-slider {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow-x: scroll; /* Enable horizontal scrolling for testimonials */
+    scroll-behavior: smooth; /* Add smooth scrolling behavior */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+}
+
+/* Style individual testimonials */
+.testimonial {
+    flex: 0 0 auto;
+    width: 400px; /* Adjust the width of each testimonial card */
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin: 0 10px; /* Add spacing between testimonials (changed margin value) */
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.testimonial p {
+    font-size: 16px;
+    color: #333;
+}
+
+.testimonial cite {
+    font-style: italic;
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    display: block;
+}
+
+/* Remove horizontal scrollbar */
+.testimonial-slider::-webkit-scrollbar {
+    display: none;
 }
 
 
