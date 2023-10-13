@@ -173,13 +173,22 @@ main h2 {
 }
 
 /* Style the testimonial slider container */
+.testimonial-slider-container {
+    display: flex;
+    justify-content: center; /* Center the testimonials horizontally */
+    overflow: hidden; /* Hide overflow to create scrollbar */
+    width: 100%; /* Set to 100% to fill the container */
+}
+
+/* Style the testimonial slider */
 .testimonial-slider {
     display: flex;
-    justify-content: space-between;
     flex-wrap: nowrap;
+    scroll-behavior: smooth;
     overflow-x: scroll; /* Enable horizontal scrolling for testimonials */
-    scroll-behavior: smooth; /* Add smooth scrolling behavior */
     -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+    width: 80%; /* Adjust the width of the slider */
+    margin: 0 auto; /* Center the slider */
 }
 
 /* Style individual testimonials */
@@ -188,7 +197,7 @@ main h2 {
     width: 400px; /* Adjust the width of each testimonial card */
     background-color: #f8f8f8;
     padding: 20px;
-    margin: 0 10px; /* Add spacing between testimonials (changed margin value) */
+    margin: 0 10px; /* Add spacing between testimonials */
     border: 1px solid #e0e0e0;
     border-radius: 5px;
     text-align: left;
@@ -207,10 +216,46 @@ main h2 {
     display: block;
 }
 
-/* Remove horizontal scrollbar */
+/* Style for the scrollbar container */
 .testimonial-slider::-webkit-scrollbar {
-    display: none;
+    width: 10px; /* Width of the scrollbar */
+    height: 10px; /* Height of the scrollbar */
+    background-color: #f0f0f0;
 }
+
+/* Style for the scrollbar thumb */
+.testimonial-slider::-webkit-scrollbar-thumb {
+    background-color: #007BFF; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Round the corners of the thumb */
+}
+
+/* Style for the scrollbar thumb on hover */
+.testimonial-slider::-webkit-scrollbar-thumb:hover {
+    background-color: #0056b3; /* Color on hover */
+}
+
+/* Style for the testimonial scrollbar container */
+.testimonial-scrollbar-container {
+    width: 100%;
+    height: 10px;
+    background-color: transparent;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+/* Style for the scrollbar thumb */
+.testimonial-scrollbar-thumb {
+    width: 50%; /* Initial width of the thumb */
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #00f1ff, transparent);
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5); /* Add a glow effect */
+}
+
+
+
+
 
 /* Style the button to show the form */
 #showContactForm { /* Update this selector */
@@ -347,3 +392,10 @@ main h2 {
     padding: 10px;
     cursor: pointer;
 }
+
+
+#skillChart {
+    width: 400px; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+}
+

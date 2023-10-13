@@ -15,24 +15,50 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// JavaScript for testimonial slider
 const testimonialSlider = document.querySelector('.testimonial-slider');
-const testimonials = document.querySelectorAll('.testimonial');
-let index = 0;
+const testimonialScrollbarThumb = document.querySelector('.testimonial-scrollbar-thumb');
+const scrollbarContainer = document.querySelector('.testimonial-scrollbar-container');
 
-function showTestimonial(index) {
-    testimonials.forEach((testimonial, i) => {
-        //testimonial.style.transform = `translateX(${(i - index) * 100}%)`;
-    });
-}
+let isDragging = false;
+let startX = 0;
 
-testimonialSlider.addEventListener('scroll', () => {
-    const scrollPercentage = (testimonialSlider.scrollLeft / (testimonialSlider.scrollWidth - testimonialSlider.clientWidth)) * 100;
-    index = Math.round((testimonials.length - 1) * (scrollPercentage / 100));
-    showTestimonial(index);
+testimonialScrollbarThumb.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  startX = e.clientX - testimonialScrollbarThumb.getBoundingClientRect().left;
+  testimonialSlider.style.scrollBehavior = 'auto';
 });
 
-showTestimonial(index);
+document.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+
+  e.preventDefault();
+
+  const containerWidth = scrollbarContainer.offsetWidth;
+  const thumbWidth = testimonialScrollbarThumb.offsetWidth;
+
+  const x = e.clientX - scrollbarContainer.getBoundingClientRect().left - startX;
+  let scrollX = (x / (containerWidth - thumbWidth)) * (testimonialSlider.scrollWidth - containerWidth);
+
+  // Ensure the scrollbar thumb stays within the container bounds
+  scrollX = Math.min(Math.max(scrollX, 0), testimonialSlider.scrollWidth - containerWidth);
+
+  testimonialSlider.scrollLeft = scrollX;
+});
+
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+  testimonialSlider.style.scrollBehavior = 'smooth';
+});
+
+testimonialSlider.addEventListener('scroll', () => {
+  const scrollPercentage = (testimonialSlider.scrollLeft / (testimonialSlider.scrollWidth - testimonialSlider.clientWidth)) * 100;
+  const thumbWidth = (testimonialSlider.clientWidth / testimonialSlider.scrollWidth) * 100;
+
+  testimonialScrollbarThumb.style.width = thumbWidth + '%';
+  testimonialScrollbarThumb.style.left = scrollPercentage + '%';
+});
+
+
 
 /*
 document.addEventListener('DOMContentLoaded', function () {
@@ -53,8 +79,11 @@ document.addEventListener('DOMContentLoaded', function () {
         data: skillData,
         options: {
             scale: {
-                angleLines: {
-                    display: false, // Hide the radial lines
+                pointLabels: {
+                    fontSize: 14, // Adjust font size
+                },
+                gridLines: {
+                    color: 'rgba(0, 0, 0, 0.2)', // Change grid line color
                 },
                 ticks: {
                     beginAtZero: true, // Start the scale from 0
@@ -63,11 +92,24 @@ document.addEventListener('DOMContentLoaded', function () {
                     callback: function (value) {
                         return value === 0 ? '' : value; // Display an empty string for 0
                     },
-                },                
+                },
+            },
+            layout: {
+                padding: {
+                    left: 20, // Adjust left padding
+                    right: 20, // Adjust right padding
+                    top: 20, // Adjust top padding
+                    bottom: 20, // Adjust bottom padding
+                },
             },
         },
     });
-});*/
+});
+*/
+
+
+
+    
 
 document.addEventListener('DOMContentLoaded', function () {
     // ... (your existing code)
@@ -124,9 +166,4 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-
-
-
-
 
