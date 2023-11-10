@@ -172,27 +172,25 @@ main h2 {
     padding: 80px 0;
 }
 
-/* Style the testimonial slider container */
-.testimonial-slider {
+  
+  .testimonial-container {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    overflow-x: scroll; /* Enable horizontal scrolling for testimonials */
-    scroll-behavior: smooth; /* Add smooth scrolling behavior */
-    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
-}
-
-/* Style individual testimonials */
-.testimonial {
-    flex: 0 0 auto;
-    width: 400px; /* Adjust the width of each testimonial card */
+    gap: 1rem;
+    overflow-x: hidden;
+    white-space: nowrap;
+  }
+  
+  .testimonial {
+    flex: 1 1 auto;
+    display: inline-block;
     background-color: #f8f8f8;
     padding: 20px;
-    margin: 0 10px; /* Add spacing between testimonials (changed margin value) */
+    margin: 0 10px;
     border: 1px solid #e0e0e0;
     border-radius: 5px;
     text-align: left;
-}
+  }
+  
 
 .testimonial p {
     font-size: 16px;
@@ -211,6 +209,15 @@ main h2 {
 .testimonial-slider::-webkit-scrollbar {
     display: none;
 }
+
+
+
+
+
+
+
+
+
 
 /* Style the button to show the form */
 #showContactForm { /* Update this selector */
@@ -310,40 +317,37 @@ main h2 {
     transition: max-height 0.5s ease-in-out; /* Add a smooth transition */
 }
 
-/* Update the CSS for the sliding menu on the left side */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: -300px; /* Initially hidden on the left */
-    width: 250px;
-    height: 100%;
-    background-color: #fff; /* Background color of the menu */
-    color: #000; /* Text color */
-    overflow-y: auto;
-    transition: left 0.3s ease-in-out; /* Transition effect for sliding */
+/* Style the about section */
+#about {
+    text-align: center;
+    padding: 80px 0;
 }
 
-/* Style the menu items as needed */
-.sidebar h2 {
-    padding: 20px;
+/* Create the about container */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
+/* Style the text on the left side */
+.about-text {
+    flex: 1;
+    text-align: left;
+    padding: 0 20px;
 }
 
-.sidebar ul li {
-    padding: 10px;
+/* Style the radar graph container on the right side */
+.radar-graph-container {
+    flex: 0.7; /* Increase the flex value to make it larger */
+    text-align: center;
+    padding: 0 40px; /* Adjust the padding for spacing */
 }
 
-/* Show the menu when clicking the button */
-#menu-button {
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px;
-    cursor: pointer;
+/* Style the radar graph */
+#skillChart {
+    max-width: 100%; /* Ensure it doesn't exceed the container's width */
+    height: auto; /* Maintain the aspect ratio */
 }
+
