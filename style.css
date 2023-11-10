@@ -205,9 +205,11 @@ main h2 {
     display: block;
 }
 
-/* Remove horizontal scrollbar */
+/* Style for the scrollbar container */
 .testimonial-slider::-webkit-scrollbar {
-    display: none;
+    width: 10px; /* Width of the scrollbar */
+    height: 10px; /* Height of the scrollbar */
+    background-color: #f0f0f0;
 }
 
 
@@ -319,8 +321,8 @@ main h2 {
 
 /* Style the about section */
 #about {
-    text-align: center;
     padding: 80px 0;
+    display: flex;
 }
 
 /* Create the about container */
@@ -347,7 +349,12 @@ main h2 {
 
 /* Style the radar graph */
 #skillChart {
-    max-width: 100%; /* Ensure it doesn't exceed the container's width */
-    height: auto; /* Maintain the aspect ratio */
+    width: 400px; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+}
+
+.chart {
+    width: 400px;
+    height: 400px;
 }
 
