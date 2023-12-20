@@ -1,233 +1,218 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
 
-<body>
-    <header class="site-header">
-        <div class="container">
-            <div class="logo">
-                <h1>Your Logo</h1>
+    <body>
+        <header class="site-header">
+            <div class="container">
+                <div class="logo">
+                    <h1>Your Logo</h1>
+                </div>
+                <div class="weather-icon"> <!-- New Weather Icon Placeholder -->
+                    <span id="weather">Loading...</span>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="menu">
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+        </header>
+        
 
-    <section class="hero" id="parallax">
-        <div class="background-video">
-            <video autoplay loop muted playsinline>
-                <source src="Files/pexels-rostislav-uzunov-7385122 (2160p).mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <h1>Welcome to Your Portfolio</h1>
-                <p>Your one-stop destination for amazing web projects.</p>
+        <section class="hero" id="parallax">
+            <div class="background-video">
+                <video autoplay loop muted playsinline>
+                    <source src="Files/pexels-rostislav-uzunov-7385122 (2160p).mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Welcome to Your Portfolio</h1>
+                    <p>Your one-stop destination for amazing web projects.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <main>
+                <section id="about">
+                    <div>
+                        <h2>About Me</h2>
+                    <p>Hello, I'm [Your Name], a web developer passionate about creating beautiful and functional websites. I have [X years] of experience in the field and love to stay updated with the latest web technologies.</p>
+                    </div>
+                    <div class="chart">
+                        <canvas id="skillChart" width="400" height="300"></canvas>
+                    </div>
+                </section>
+
+    <!-- Add the interactive horizontal timeline section here -->
+    <section id="timeline">
+        <h2>Interactive Horizontal Timeline</h2>
+        <div class="timeline-container">
+            <!-- Modal for event details -->
+            <div id="event-details-modal" class="modal"></div>
+
+            <!-- Filler events -->
+            <div class="timeline-event">
+                <div class="timeline-date">2022</div>
+                <div class="timeline-content">
+                    <h3>Event 1</h3>
+                    <p>Some details about Event 1.</p>
+                </div>
+            </div>
+            <div class="timeline-event">
+                <div class="timeline-date">2023</div>
+                <div class="timeline-content">
+                    <h3>Event 2</h3>
+                    <p>Some details about Event 2.</p>
+                </div>
+            </div>
+            <div class="timeline-event">
+                <div class="timeline-date">2024</div>
+                <div class="timeline-content">
+                    <h3>Event 3</h3>
+                    <p>Some details about Event 3.</p>
+                </div>
+            </div>
+            <div class="timeline-event">
+                <div class="timeline-date">2025</div>
+                <div class="timeline-content">
+                    <h3>Event 4</h3>
+                    <p>Some details about Event 4.</p>
+                </div>
+            </div>
+            <div class="timeline-event">
+                <div class="timeline-date">2026</div>
+                <div class="timeline-content">
+                    <h3>Event 5</h3>
+                    <p>Some details about Event 5.</p>
+                </div>
+            </div>
+            <div class="timeline-event">
+                <div class="timeline-date">2027</div>
+                <div class="timeline-content">
+                    <h3>Event 6</h3>
+                    <p>Some details about Event 6.</p>
+                </div>
+            </div>
+            <div class="timeline-event">
+                <div class="timeline-date">2028</div>
+                <div class="timeline-content">
+                    <h3>Event 7</h3>
+                    <p>Some details about Event 7.</p>
+                </div>
+            </div>
+            <!-- Add more events as needed -->
         </div>
     </section>
 
-    <div class="container">
-        <main>
-            <section id="about">
-                <div>
-                    <h2>About Me</h2>
-                <p>Hello, I'm [Your Name], a web developer passionate about creating beautiful and functional websites. I have [X years] of experience in the field and love to stay updated with the latest web technologies.</p>
-                </div>
-                <div class="chart">
-                    <canvas id="skillChart" width="400" height="300"></canvas>
-                </div>
-            </section>
-
-<!-- Add the interactive horizontal timeline section here -->
-<section id="timeline">
-    <h2>Interactive Horizontal Timeline</h2>
-    <div class="timeline-container">
-        <!-- Modal for event details -->
-        <div id="event-details-modal" class="modal"></div>
-
-        <!-- Filler events -->
-        <div class="timeline-event">
-            <div class="timeline-date">2022</div>
-            <div class="timeline-content">
-                <h3>Event 1</h3>
-                <p>Some details about Event 1.</p>
-            </div>
-        </div>
-        <div class="timeline-event">
-            <div class="timeline-date">2023</div>
-            <div class="timeline-content">
-                <h3>Event 2</h3>
-                <p>Some details about Event 2.</p>
-            </div>
-        </div>
-        <div class="timeline-event">
-            <div class="timeline-date">2024</div>
-            <div class="timeline-content">
-                <h3>Event 3</h3>
-                <p>Some details about Event 3.</p>
-            </div>
-        </div>
-        <div class="timeline-event">
-            <div class="timeline-date">2025</div>
-            <div class="timeline-content">
-                <h3>Event 4</h3>
-                <p>Some details about Event 4.</p>
-            </div>
-        </div>
-        <div class="timeline-event">
-            <div class="timeline-date">2026</div>
-            <div class="timeline-content">
-                <h3>Event 5</h3>
-                <p>Some details about Event 5.</p>
-            </div>
-        </div>
-        <div class="timeline-event">
-            <div class="timeline-date">2027</div>
-            <div class="timeline-content">
-                <h3>Event 6</h3>
-                <p>Some details about Event 6.</p>
-            </div>
-        </div>
-        <div class="timeline-event">
-            <div class="timeline-date">2028</div>
-            <div class="timeline-content">
-                <h3>Event 7</h3>
-                <p>Some details about Event 7.</p>
-            </div>
-        </div>
-        <!-- Add more events as needed -->
-    </div>
-</section>
 
 
-
-            <section id="portfolio">
-                <h2>Portfolio</h2>
-                <div class="project">
-                    <!--img src="images/project1.jpg" alt="Project 1"-->
-                    <h3>Project 1</h3>
-                    <p>This is a brief description of Project 1. It showcases my skills in [mention the technologies or skills used].</p>
-                </div>
-
-                <div class="project">
-                    <!--img src="images/project2.jpg" alt="Project 2"-->
-                    <h3>Project 2</h3>
-                    <p>Project 2 is another example of my work. It demonstrates my expertise in [mention the technologies or skills used].</p>
-                </div>
-                <!-- Add more project entries as needed -->
-            </section>
-
-
-            <section id="testimonials">
-                <h2>Testimonials</h2>
-                    <div class="testimonial-container">
-                        <div class="testimonial">
-                            <p>"Timon was and still is the best worker at google"</p>
-                            <cite>Google</cite>
-                        </div>
-                        <div class="testimonial">
-                            <p>"Testimonial 2 text goes here. Another happy client's feedback."</p>
-                            <cite>Client Name 2</cite>
-                        </div>
-                        <div class="testimonial">
-                            <p>"Testimonial 3 text goes here. Another happy client's feedback."</p>
-                            <cite>Client Name 3</cite>
-                        </div>
-                        <div class="testimonial">
-                            <p>"Testimonial 4 text goes here. Another happy client's feedback."</p>
-                            <cite>Client Name 4</cite>
-                        </div>
-                        <div class="testimonial">
-                            <p>"Testimonial 5 text goes here. Another happy client's feedback."</p>
-                            <cite>Client Name 5</cite>
-                        </div>
-                        <div class="testimonial">
-                            <p>"Testimonial 6 text goes here. Another happy client's feedback."</p>
-                            <cite>Client Name 6</cite>
-                        </div>
-                        <div class="testimonial">
-                            <p>"Testimonial 7 text goes here. Another happy client's feedback."</p>
-                            <cite>Client Name 7</cite>
-                        </div>
-                        <!-- Add more testimonials as needed -->
+                <section id="portfolio">
+                    <h2>Portfolio</h2>
+                    <div class="project">
+                        <!--img src="images/project1.jpg" alt="Project 1"-->
+                        <h3>Project 1</h3>
+                        <p>This is a brief description of Project 1. It showcases my skills in [mention the technologies or skills used].</p>
                     </div>
-            </section>
+
+                    <div class="project">
+                        <!--img src="images/project2.jpg" alt="Project 2"-->
+                        <h3>Project 2</h3>
+                        <p>Project 2 is another example of my work. It demonstrates my expertise in [mention the technologies or skills used].</p>
+                    </div>
+                    <!-- Add more project entries as needed -->
+                </section>
+
+
+                <section id="testimonials">
+                    <h2>Testimonials</h2>
+                        <div class="testimonial-container">
+                            <div class="testimonial">
+                                <p>"Timon was and still is the best worker at google"</p>
+                                <cite>Google</cite>
+                            </div>
+                            <div class="testimonial">
+                                <p>"Testimonial 2 text goes here. Another happy client's feedback."</p>
+                                <cite>Client Name 2</cite>
+                            </div>
+                            <div class="testimonial">
+                                <p>"Testimonial 3 text goes here. Another happy client's feedback."</p>
+                                <cite>Client Name 3</cite>
+                            </div>
+                            <div class="testimonial">
+                                <p>"Testimonial 4 text goes here. Another happy client's feedback."</p>
+                                <cite>Client Name 4</cite>
+                            </div>
+                            <div class="testimonial">
+                                <p>"Testimonial 5 text goes here. Another happy client's feedback."</p>
+                                <cite>Client Name 5</cite>
+                            </div>
+                            <div class="testimonial">
+                                <p>"Testimonial 6 text goes here. Another happy client's feedback."</p>
+                                <cite>Client Name 6</cite>
+                            </div>
+                            <div class="testimonial">
+                                <p>"Testimonial 7 text goes here. Another happy client's feedback."</p>
+                                <cite>Client Name 7</cite>
+                            </div>
+                            <!-- Add more testimonials as needed -->
+                        </div>
+                </section>
+                    
                 
-            
-            
-            
-            
+                
+                
+                
 
-            <section id="contact">
-                <h2>Contact</h2>
-                <button id="showContactForm">Get In Touch</button>
-                <div class="contact-form-container hidden" id="contactFormContainer">
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Name:</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message:</label>
-                            <textarea id="message" name="message" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-button">Send Message</button>
-                    </form>
-                </div>
-            </section>
-            
-
-        <aside class="side-bar">
-            <div class="widget">
-                <h3>Recent Posts</h3>
-                <ul>
-                    <li><a href="#">Post 1</a></li>
-                    <li><a href="#">Post 2</a></li>
-                    <li><a href="#">Post 3</a></li>
-                </ul>
-            </div>
-            <div class="widget">
-                <h3>Categories</h3>
-                <ul>
-                    <li><a href="#">Category 1</a></li>
-                    <li><a href="#">Category 2</a></li>
-                    <li><a href="#">Category 3</a></li>
-                </ul>
-            </div>
-        </aside>
-    </div>
-
-    <footer class="site-footer">
-        <div class="container">
-            <ul class="social-icons horizontal-icons">
-                <li><a href="https://www.facebook.com" class="icon" target="_blank"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="https://www.twitter.com" class="icon" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="https://www.linkedin.com" class="icon" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="https://www.instagram.com" class="icon instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                <!-- Add more social media icons as needed -->
-            </ul>
-            <p>&copy; 2023 Your Name</p>
+                <section id="contact">
+                    <h2>Contact</h2>
+                    <button id="showContactForm">Get In Touch</button>
+                    <div class="contact-form-container hidden" id="contactFormContainer">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message:</label>
+                                <textarea id="message" name="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button">Send Message</button>
+                        </form>
+                    </div>
+                </section>
+                
         </div>
-    </footer>
-    
-    <script src="./script.js"></script>
-</body>
-</html>
+
+        <footer class="site-footer">
+            <div class="container">
+                <ul class="social-icons horizontal-icons">
+                    <li><a href="https://www.facebook.com" class="icon" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="https://www.twitter.com" class="icon" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.linkedin.com" class="icon" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://www.instagram.com" class="icon instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <!-- Add more social media icons as needed -->
+                </ul>
+                <p>&copy; 2023 Your Name</p>
+            </div>
+        </footer>
+        
+        <script src="./script.js"></script>
+    </body>
+    </html>

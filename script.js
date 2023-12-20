@@ -1,29 +1,3 @@
-function setupInfiniteScroll() {
-    const testimonialContainer = document.querySelector('.testimonial-container');
-    const testimonials = Array.from(testimonialContainer.children);
-    const totalWidth = testimonials.reduce((total, elem) => total + elem.offsetWidth + 10, 0);
-  
-    testimonialContainer.append(...testimonials.map(testimonial => testimonial.cloneNode(true)));
-  
-    let currentScrollPosition = 0;
-    const step = 2;
-  
-    function scrollTestimonials() {
-      currentScrollPosition += step;
-      if (currentScrollPosition >= totalWidth) {
-        currentScrollPosition = 0;
-      }
-      testimonialContainer.scrollLeft = currentScrollPosition;
-      
-      requestAnimationFrame(scrollTestimonials);
-    }
-  
-    scrollTestimonials();
-  }
-  
-  document.addEventListener('DOMContentLoaded', setupInfiniteScroll);
-  
-
   const skillData = {
     labels: ['Web Development', 'Graphic Design', 'Project Management', 'Communication', 'Problem Solving'],
     datasets: [{
@@ -162,17 +136,35 @@ function hideEventDetails() {
 }
 
 
-// Contact form show/hide functionality
-document.addEventListener('DOMContentLoaded', () => {
-    setupInfiniteScroll();
-  
-    const contactButton = document.getElementById('showContactForm');
-    const contactFormContainer = document.getElementById('contactFormContainer');
-  
+  // Contact form show/hide logic
+  const contactButton = document.getElementById('showContactForm');
+  const contactFormContainer = document.getElementById('contactFormContainer');
+  if (contactButton && contactFormContainer) {
     contactButton.addEventListener('click', () => {
       contactFormContainer.classList.toggle('active');
     });
-  
-    // You should also setup your radar chart here if it is not done already
-    // new Chart(ctx, { type: 'radar', data: skillData, options: { ... } });
-  });
+  } else {
+    console.error('Could not find the contact button or the contact form container.');
+  }
+
+  // ... Any other code that needs to run after the DOM is loaded
+
+  document.addEventListener('DOMContentLoaded', () => {
+    fetchWeatherData();
+});
+
+
+function fetchWeatherData() {
+    const apiKey = '315b593d4eeb578cd8bfb8b48e3c496e'; // Replace with your actual API key
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=Berne&appid=${apiKey}`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const temperature = Math.round(data.main.temp - 273.15); // Convert Kelvin to Celsius
+            document.getElementById('weather').textContent = `Temprature in Berne ${temperature}°C`;
+        })
+        .catch(() => {
+            document.getElementById('weather').textContent = 'Weather not available';
+        });
+}

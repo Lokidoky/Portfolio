@@ -215,106 +215,148 @@ main h2 {
     display: block;
 }
 
-#contact {
-    text-align: center; /* Center the title and button */
-    margin-bottom: 20px;
+/* Base styles for form elements */
+.form-group label {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    font-size: 16px; /* Slightly larger font-size for readability */
 }
 
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 4px; /* Soften the corners */
+    padding: 12px; /* More padding for a better look */
+    margin-bottom: 15px;
+    font-size: 16px; /* Slightly larger font-size for readability */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); /* Inner shadow for depth */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transition for interaction */
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #007bff; /* Highlight color */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 0 2px #007bff; /* Focus effect */
+}
+
+/* Base styling */
+body {
+    background: #2c3e50; /* Assuming the body background is dark as in the image */
+    font-family: 'Arial', sans-serif;
+}
+
+
+
+/* Contact Section Title */
+#contact {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #CCCCCC; /* Light grey for contrast */
+}
+
+/* Contact Form Toggle Button ("Get In Touch" Button) */
 #showContactForm {
-    background-color: #0056b3; /* Match the button color with the form */
-    color: white;
+    background-color: #333333; /* Dark grey button */
+    color: #FFFFFF; /* White text for readability */
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 4px;
-    transition: background-color 0.3s;
+    outline: none;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 #showContactForm:hover {
-    background-color: #003d82; /* Darken the button when hovered */
+    background-color: #444444; /* Lighten the button on hover */
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
+/* Contact Form Container */
 .contact-form-container {
     max-width: 600px;
-    margin: 0 auto; /* Center the form container */
+    margin: 30px auto; /* Center the form with more margin */
     padding: 20px;
-    background-color: #333; /* Keep the dark theme */
+    background-color: #222222; /* Very dark grey */
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: all 0.5s ease-in-out;
-    max-height: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Stronger shadow for a 'floating' effect */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform-origin: top;
+    transform: scaleY(0);
     opacity: 0;
+    height: 0;
+    overflow: hidden;
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.contact-form-container.active {
+    transform: scaleY(1);
+    opacity: 1;
+    height: auto; /* Adjust height when active */
 }
 
-.form-group {
-    margin-bottom: 1rem;
-}
-
-.form-group label {
-    color: #ccc; /* Light grey color for labels */
-    margin-bottom: 0.5rem;
-}
-
-/* Contact form container styling */
-.contact-form-container {
-    background-color: #333; /* Dark background for contrast */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Input field styling */
+/* Input Fields Styling */
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-    background-color: #222; /* Slightly lighter than the container for contrast */
-    color: #fff; /* White text for readability */
-    border: 1px solid #555; /* Subtle border */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Soft box shadow for depth */
-    padding: 10px; /* Comfortable padding inside fields */
-    margin-bottom: 15px; /* Spacing between fields */
+    background-color: #333333; /* Dark grey for input backgrounds */
+    color: #FFFFFF; /* White text */
+    border: 1px solid #444444; /* Slightly lighter border for depth */
+    border-radius: 4px; /* Rounded corners */
+    padding: 15px; /* Comfortable padding */
+    margin-bottom: 20px; /* Consistent spacing between fields */
+    width: calc(100% - 30px); /* Full width minus padding */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    font-size: 16px; /* Readable font size */
 }
 
-/* Button styling */
-.contact-form button {
-    background-color: #007bff; /* Eye-catching blue */
-    color: white;
-    padding: 15px 30px; /* Larger padding for a bigger button */
-    font-size: 18px; /* Larger font size for readability */
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+.contact-form textarea {
+    height: 150px; /* Fixed height for the textarea */
+    resize: vertical; /* Allow only vertical resizing */
 }
 
-.contact-form button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
-}
-
-/* Alignment and spacing */
 .contact-form label {
-    display: block; /* Ensures the label is on a new line */
+    display: block; /* Ensure labels are on their own line */
     margin-bottom: 5px; /* Space between label and input field */
     color: #ccc; /* Light grey color for labels */
+    font-size: 16px; /* Readable font size */
 }
 
-.contact-form button[type="submit"] {
-    width: 100%; /* Full width button */
-    margin-top: 20px; /* Space above the button */
+/* Adjust label to align with the textboxes */
+.contact-form label {
+    padding-left: 15px; /* Align with the text box padding */
+    padding-right: 15px; /* Align with the text box padding */
 }
 
+
+/* Send Message Button Styling */
 .contact-form button[type="submit"] {
+    background-color: #555555; /* Lighter grey for the button */
+    color: #FFFFFF; /* White text */
+    padding: 15px 30px; /* Spacious padding for a large button */
+    font-size: 1rem; /* Readable font size */
+    border: none; /* No border */
+    border-radius: 4px; /* Match the input field border radius */
     cursor: pointer;
-    /* Rest of your styles */
+    transition: background-color 0.3s;
+    margin-top: 10px; /* Space from the last input field */
+    width: 100%; /* Full width */
 }
+
+.contact-form button[type="submit"]:hover {
+    background-color: #666666; /* Slightly lighter on hover */
+}
+
+/* Ensure that the button is not covered by any other element */
+#showContactForm {
+    position: relative;
+    z-index: 2; /* Higher than the form container to ensure it's clickable */
+}
+
 
 /* Style the interactive horizontal timeline */
 #timeline {
@@ -403,5 +445,14 @@ main h2 {
 #event-details-modal {
     display: none;
     /* other styles */
+}
+
+.weather-icon {
+    margin-right: 20px; /* Adjust spacing as needed */
+    color: #FFFFFF; /* Adjust color as needed */
+    font-size: 0.9rem; /* Adjust font size as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
