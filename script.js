@@ -162,7 +162,7 @@ function fetchWeatherData() {
         .then(response => response.json())
         .then(data => {
             const temperature = Math.round(data.main.temp - 273.15); // Convert Kelvin to Celsius
-            document.getElementById('weather').textContent = `Temprature in Berne ${temperature}°C`;
+            document.getElementById('weather').textContent = `Temprature in Bern ${temperature}°C`;
         })
         .catch(() => {
             document.getElementById('weather').textContent = 'Weather not available';
