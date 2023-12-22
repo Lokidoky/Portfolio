@@ -6,11 +6,22 @@ body, h1, h2, h3, p, ul, li {
     color: #ffffff; /* Light text color for better readability */
     font-family: 'Arial', sans-serif; /* Modern sans-serif font */
 }
+body {
+    background-color: #1a1a1a; /* or any other color */
+}
+
+body {
+    background-color: #1a1a1a; /* Change to the color of your choice */
+}
+
+
+.hero, .hero .background-video {
+    overflow: visible;
+}
 
 p {
     color: #cccccc; /* Light gray color for paragraphs */
 }
-
 
 /* Style the header */
 .site-header {
@@ -45,10 +56,6 @@ p {
     font-weight: bold;
 }
 
-.site-header .menu ul li a:hover {
-    color: #007bff;
-    text-decoration: underline;
-}
 
 /* Style the existing hero section */
 .hero {
@@ -117,11 +124,6 @@ main h2 {
     color: #cccccc;
 }
 
-.widget ul li a:hover {
-    color: #007bff;
-    text-decoration: underline;
-}
-
 /* Style the footer */
 .site-footer {
     background-color: #1a1a1a;
@@ -187,26 +189,26 @@ main h2 {
     white-space: nowrap;
 }
 
-.testimonial {
-    /* Other existing styles */
-    background-color: #333333;
-    padding: 20px;
-    margin: 0 10px 20px; /* Added bottom margin for spacing between rows */
-    border: 1px solid #555555;
-    border-radius: 5px;
-    text-align: left;
-    color: #ffffff;
+    .testimonial {
+        /* Other existing styles */
+        background-color: #333333;
+        padding: 20px;
+        margin: 0 10px 20px; /* Added bottom margin for spacing between rows */
+        border: 1px solid #555555;
+        border-radius: 5px;
+        text-align: left;
+        color: #ffffff;
 
-    /* Remove any fixed width or max-width if they are set */
-    /* Instead, use min-width and max-width for flexibility */
-    min-width: 450px; /* Minimum width of the testimonials */
-    max-width: 500px; /* Maximum width of the testimonials */
+        /* Remove any fixed width or max-width if they are set */
+        /* Instead, use min-width and max-width for flexibility */
+        min-width: 450px; /* Minimum width of the testimonials */
+        max-width: 500px; /* Maximum width of the testimonials */
 
-    white-space: normal;
-    overflow-wrap: break-word;
-    display: inline-block; /* Keeps testimonials side by side */
-    vertical-align: top; /* Keeps testimonials top aligned */
-}
+        white-space: normal;
+        overflow-wrap: break-word;
+        display: inline-block; /* Keeps testimonials side by side */
+        vertical-align: top; /* Keeps testimonials top aligned */
+    }
 
 .testimonial cite {
     font-style: italic;
@@ -251,14 +253,6 @@ main h2 {
     font-size: 16px; /* Slightly larger font-size for readability */
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); /* Inner shadow for depth */
     transition: border-color 0.3s, box-shadow 0.3s; /* Transition for interaction */
-}
-
-.form-group input[type="text"]:focus,
-.form-group input[type="email"]:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #007bff; /* Highlight color */
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 0 2px #007bff; /* Focus effect */
 }
 
 /* Base styling */
@@ -376,11 +370,11 @@ body {
 
 
 /* Style the interactive horizontal timeline */
+/* Style the interactive horizontal timeline */
 #timeline {
     text-align: center;
     background-color: #1a1a1a;
     padding: 20px 0;
-    overflow: hidden;
 }
 
 .timeline-container {
@@ -391,14 +385,26 @@ body {
 }
 
 .timeline-event {
-    width: 300px;
-    margin-right: 20px;
+    background-color: #333333; /* Same background color as testimonials */
+    color: #ffffff; /* Same text color as testimonials */
+    border: 1px solid #444444; /* Same border color as testimonials */
+    border-radius: 5px; /* Same border radius as testimonials */
+    padding: 20px; /* Same padding as testimonials */
+    margin: 0 10px 20px; /* Same margin as testimonials */
     flex: 0 0 auto;
     scroll-snap-align: start;
-    background-color: #333333;
-    color: #ffffff;
-    border: 1px solid #555555;
+    display: inline-block; /* Keeps timeline events side by side */
+    vertical-align: top; /* Keeps timeline events top aligned */
+    min-width: 450px; /* Minimum width of the timeline events */
+    max-width: 500px; /* Maximum width of the timeline events */
+    white-space: normal;
+    overflow-wrap: break-word;
 }
+
+.timeline-content h3, .timeline-content p {
+    color: #cccccc; /* Light grey color for text inside timeline events */
+}
+
 
 .timeline-content.active {
     display: block;
@@ -442,11 +448,6 @@ body {
 .chart {
     width: 400px;
     height: 400px;
-}
-
-.timeline-event.active {
-    border: 2px solid #007bff;
-    background-color: rgba(0, 123, 255, 0.1);
 }
 
 .modal {
