@@ -581,3 +581,56 @@ body, h1, h2, h3, p, ul, li {
 }
 
 
+@media (max-width: 600px) {
+    .sidebar {
+      display: none;
+    }
+    .main-content {
+      width: 100%;
+    }
+  }
+  
+
+/* Existing Styles for larger screens */
+#about {
+    display: flex;
+    /* Other styles... */
+}
+
+
+/* Media Query for mobile devices */
+@media (max-width: 600px) {
+    #about {
+        flex-direction: column; /* Stack child elements vertically */
+    }
+
+    .about-text, .chart {
+        width: 100%; /* Full width */
+        padding: 10px 0; /* Adjust padding as necessary */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    .chart {
+        order: 2; /* Ensure the chart is below the text */
+    }
+
+    .about-text {
+        order: 1; /* Ensure the text is above the chart */
+    }
+}
+@media (max-width: 600px) {
+    .testimonial-container {
+        /* Enable horizontal scrolling */
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+    .testimonial {
+        /* Set a fixed width or use min-width and max-width for each testimonial */
+        min-width: 80%; /* Adjust this value as needed */
+        max-width: 80%; /* Adjust this value as needed */
+        display: inline-block; /* Keep testimonials in a line */
+        margin: 10px; /* Add space around testimonials */
+    }
+}

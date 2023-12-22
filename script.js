@@ -77,18 +77,23 @@ if (!ctx) {
 }
 
 
-
 function setupInfiniteScroll() {
     const testimonialContainer = document.querySelector('.testimonial-container');
+    if (!testimonialContainer) return;
+
     const testimonials = Array.from(testimonialContainer.children);
     const totalWidth = testimonials.reduce((total, elem) => total + elem.offsetWidth + 10, 0);
-  
+
+    // Clear previously cloned testimonials before appending new ones
+    while (testimonialContainer.children.length > testimonials.length) {
+        testimonialContainer.removeChild(testimonialContainer.lastChild);
+    }
     testimonialContainer.append(...testimonials.map(testimonial => testimonial.cloneNode(true)));
-  
+
     let currentScrollPosition = 0;
     let scrollInterval;
     const step = 2;
-  
+
     function scrollTestimonials() {
         currentScrollPosition += step;
         if (currentScrollPosition >= totalWidth) {
@@ -96,7 +101,7 @@ function setupInfiniteScroll() {
         }
         testimonialContainer.scrollLeft = currentScrollPosition;
     }
-  
+
     function startScrolling() {
         scrollInterval = setInterval(scrollTestimonials, 20);
     }
@@ -110,6 +115,13 @@ function setupInfiniteScroll() {
 
     startScrolling();
 }
+
+// Reinitialize the scrolling when the window is resized
+window.addEventListener('resize', setupInfiniteScroll);
+
+// Initialize the scrolling effect when the document is ready
+document.addEventListener('DOMContentLoaded', setupInfiniteScroll);
+    
 
 document.addEventListener('DOMContentLoaded', setupInfiniteScroll);
 
