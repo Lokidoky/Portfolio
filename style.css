@@ -90,9 +90,6 @@ main h2 {
     color: #ffffff;
 }
 
-.project {
-    margin-bottom: 20px;
-}
 
 /* Style the side bar */
 .side-bar {
@@ -191,16 +188,34 @@ main h2 {
 }
 
 .testimonial {
-    flex: 1 1 auto;
-    display: inline-block;
+    /* Other existing styles */
     background-color: #333333;
     padding: 20px;
-    margin: 0 10px;
+    margin: 0 10px 20px; /* Added bottom margin for spacing between rows */
     border: 1px solid #555555;
     border-radius: 5px;
     text-align: left;
     color: #ffffff;
+
+    /* Remove any fixed width or max-width if they are set */
+    /* Instead, use min-width and max-width for flexibility */
+    min-width: 450px; /* Minimum width of the testimonials */
+    max-width: 500px; /* Maximum width of the testimonials */
+
+    white-space: normal;
+    overflow-wrap: break-word;
+    display: inline-block; /* Keeps testimonials side by side */
+    vertical-align: top; /* Keeps testimonials top aligned */
 }
+
+.testimonial cite {
+    font-style: italic;
+    color: #999999; /* Lighter color for the citation */
+    display: block; /* Ensure the cite is on a new line */
+    margin-top: 10px; /* Space above the cite */
+}
+
+
 
 .testimonial p {
     font-size: 16px;
@@ -214,6 +229,8 @@ main h2 {
     margin-top: 10px;
     display: block;
 }
+
+
 
 /* Base styles for form elements */
 .form-group label {
@@ -455,4 +472,111 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+/* Typography */
+body, h1, h2, h3, p, ul, li {
+    font-family: 'Open Sans', sans-serif; /* Example: Google Font */
+}
+
+/* Hero Section */
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    padding: 50px; /* Increased padding */
+}
+
+/* About Section */
+#about h3 {
+    font-size: 1.2rem;
+    color: #cccccc;
+    margin-top: 20px; /* Spacing above each subheading */
+}
+
+#about p {
+    margin-bottom: 20px; /* Spacing below each paragraph */
+}
+
+/* Timeline and Portfolio Sections */
+.timeline-event, .project {
+    background-color: #282c34; /* Slightly lighter than the main background */
+    padding: 20px;
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 20px; /* Spacing between items */
+}
+
+/* Existing CSS ... */
+
+/* Adjusting the Portfolio Projects */
+.project {
+    margin-bottom: 30px; /* Spacing between projects */
+    color: #ffffff; /* Ensuring text color consistency */
+}
+
+.project h3 {
+    font-size: 1.2rem;
+    color: #cccccc;
+    margin-top: 20px; /* Spacing above each subheading */
+}
+
+.project p {
+    font-size: 1rem; /* Adjust font size for readability */
+    /*margin-top: 10px; /* Spacing above the project description */
+}
+
+/* Remove distinct box styling from projects */
+.project {
+    background-color: transparent; /* Removing distinct background */
+    padding: 0; /* Removing padding */
+    border: none; /* Removing border */
+    box-shadow: none; /* Removing box shadow */
+}
+
+/* ... Rest of your existing CSS */
+
+
+
+/* Testimonials Section */
+.testimonial p {
+    font-style: italic;
+    font-size: 1rem;
+}
+
+/* Contact Form */
+.contact-form-container {
+    background-color: #282c34; /* Slightly lighter than the main background */
+    padding: 40px; /* Increased padding */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.contact-form button[type="submit"] {
+    background-color: #007bff; /* Brighter color for visibility */
+    padding: 15px 30px;
+    font-size: 1rem;
+}
+
+/* Hero Section Content */
+.hero-content {
+    text-align: center; /* Center align content */
+    padding: 100px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Typing Title */
+#typing-title {
+    font-family: 'Courier New', monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block; /* Inline block for centering */
+    border-right: .15em solid black; /* Cursor effect */
+    animation: blink-caret .75s step-end infinite;
+
+    /* Set a fixed width if necessary to prevent layout shift during typing */
+    /* width: 20em; */
+}
+
+/* Cursor Blink Keyframe */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+}
+
 

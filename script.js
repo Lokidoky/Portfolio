@@ -156,7 +156,7 @@ function hideEventDetails() {
 
 function fetchWeatherData() {
     const apiKey = '315b593d4eeb578cd8bfb8b48e3c496e'; // Replace with your actual API key
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=Berne&appid=${apiKey}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=Bern&appid=${apiKey}`;
 
     fetch(url)
         .then(response => response.json())
@@ -168,3 +168,38 @@ function fetchWeatherData() {
             document.getElementById('weather').textContent = 'Weather not available';
         });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const title = document.getElementById('typing-title');
+    const text = title.innerHTML;
+    const typingSpeed = 150;
+    let i = 0;
+    title.innerHTML = '';
+
+    function typeWriter() {
+        if (i < text.length) {
+            title.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, typingSpeed);
+        }
+    }
+
+    typeWriter();
+});
+function throwConfetti() {
+    confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 } // make sure the confetti comes from the logo area
+    });
+}
+
+// Add event listener to logo
+document.addEventListener('DOMContentLoaded', () => {
+    const logo = document.querySelector('.logo img'); // make sure this selector targets your logo
+    if (logo) {
+        logo.addEventListener('click', throwConfetti);
+    }
+});
+
+
